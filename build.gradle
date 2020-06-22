@@ -1,9 +1,8 @@
 plugins {
     id 'java'
     id 'war'
-    id 'org.springframework.boot' version '2.2.7.RELEASE'
+    id 'org.springframework.boot' version '2.3.1.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-    id 'com.vaadin' version '0.6.0'
 }
 
 group 'edu.alsjava.example.vaadinsecurity'
@@ -23,8 +22,7 @@ configurations {
 
 ext {
     junit_jupiter_version = '5.6.2'
-    spring_boot_version = '2.2.7.RELEASE'
-    vaadin_version = '14.1.27'
+    vaadin_version = '14.2.1'
     lombok_version = '1.18.12'
     h2_version = '1.4.200'
 }
@@ -45,9 +43,9 @@ dependencies {
                 .forEach { group -> exclude(group: group) }
     }
     // Spring Boot
-    implementation "org.springframework.boot:spring-boot-starter-web:$spring_boot_version"
-    implementation "org.springframework.boot:spring-boot-starter-security:$spring_boot_version"
-    implementation "org.springframework.boot:spring-boot-starter-data-jpa:$spring_boot_version"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
     // DB
     implementation "com.h2database:h2:$h2_version"
     // Boilerplate Code
